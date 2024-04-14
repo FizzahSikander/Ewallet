@@ -1,0 +1,111 @@
+@mixin topHeading {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #222;
+}
+
+@mixin activeNewHeading {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(34, 34, 34, 0.6);
+    margin-bottom: 0.8rem;
+}
+
+@mixin cardNumber {
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 32px;
+    letter-spacing: 0.03em;
+
+    @media (max-width: 400px) {
+        font-size: 22px;
+    }
+
+    @media (max-width: 300px) {
+        font-size: 18px;
+    }
+}
+
+@mixin cardTitle {
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    text-transform: uppercase;
+
+    @media (max-width: 400px) {
+        font-size: 10px;
+    }    
+}
+
+@mixin cardName {
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    @media (max-width: 400px) {
+        font-size: 14px;;
+    }  
+}
+
+@mixin cardValid {
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+@mixin cardDate {
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+@mixin buttonBase {
+    min-height: 72px;
+    min-width: 382px;
+    border-radius: 8px;
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    text-transform: uppercase;
+
+    @media (max-width: 400px) {
+        min-width: 280px;
+    }    
+}
+
+@mixin inputBase {
+    min-width: 280px;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+
+    @media (max-width: 400px) {
+        padding: 0.5rem 1.5rem;
+        font-size: 12px;
+    }    
+}

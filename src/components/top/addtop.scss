@@ -1,0 +1,27 @@
+@import '../../sass/_mixins.scss';
+@import '../../sass/_colors.scss';
+
+.addtop {
+    min-width: 280px;
+    min-height: 98px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__heading {
+        @include topHeading;
+        margin-top: 2rem;
+    }
+
+    &__activecard {
+        @include activeNewHeading;
+    }
+
+    &__round {
+        padding: 0.5rem 1rem;
+        align-self: flex-start;
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+}

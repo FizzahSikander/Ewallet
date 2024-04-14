@@ -1,0 +1,57 @@
+@import '../../sass/_mixins.scss';
+@import '../../sass/_colors.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+.card-stack {
+    min-height: 337px;
+    min-width: 280px;
+    margin-top: 1rem;
+
+    &__card {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid black;
+    }
+
+    &__logo {
+        display: flex;
+        align-self: flex-start;
+        margin: 2rem;
+    }
+
+    &__noCards {
+        padding-top: 9rem;
+        padding-bottom: 9rem;
+        border: 1px solid salmon;
+        border-radius: 4px;
+    }
+
+    &__noCards-text {
+        font-size: larger;
+        font-family: 'PT Mono';
+    }
+
+    &__removeButton {
+        position: absolute;
+        top: 10px;
+        left: 12rem;
+        border-radius: 4px;
+        border-style: none;
+        background-color: coral;
+    
+        @media (max-width: 400px) {
+            left: 10rem;
+           }
+    }
+
+    &__removeButton:hover {
+        filter: brightness(110%);
+    }
+    &__removeButton:active {
+        transform: scale(0.98);
+    }
+
+}

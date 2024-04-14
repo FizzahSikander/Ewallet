@@ -1,0 +1,64 @@
+@import '../../sass/_mixins.scss';
+@import '../../sass/_colors.scss';
+
+.card {
+    min-width: 280px;
+    min-height: 241px;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    background-color: $cardGrey;
+    filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.2));
+
+    &__icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0rem;
+    }
+
+    &__chip {
+        display: flex;
+        align-self: flex-start;
+        margin: 1rem;
+    }
+
+    &__logo {
+        display: flex;
+        align-self: flex-start;
+        margin: 2rem;
+    }
+
+    &__specs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1rem
+    }
+
+    &__numbers {
+        @include cardNumber;
+        margin: 0.7rem;
+    }
+
+    &__title {
+        @include cardValid;
+    }
+
+    &__valid {
+        @include cardValid;
+    }
+
+    &__name {
+        @include cardName;
+    }
+
+    &__date {
+        @include cardDate;
+    }
+
+    &__background {
+        outline: #4CAF50 solid 6px;
+        margin-bottom: 1.5rem;
+    }
+}

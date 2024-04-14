@@ -1,0 +1,22 @@
+@import '../../src/sass/_colors.scss';
+@import '../../src/sass/_mixins.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+.wallet-article {
+    min-width: 280px;
+    min-height: 896px;
+    background-color: #fdfdfd;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem;
+} 
+
+.wallet-article__button {
+    @include buttonBase;
+    background-color: transparent;
+    margin-top: 2rem;
+}

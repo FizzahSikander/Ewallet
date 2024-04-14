@@ -1,0 +1,104 @@
+@import '../../sass/_mixins.scss';
+@import '../../sass/_colors.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+.card-form {
+    min-width: 280px;
+    min-height: 341px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    &__number {
+        @include cardTitle;
+        text-align: left;
+    }
+
+    &__number-input {
+        @include inputBase;
+        @include cardTitle;
+    }
+
+    &__name {
+        margin-top: 0.5rem;
+        @include cardTitle;
+    }
+
+    &__name-input {
+        @include inputBase;
+        @include cardTitle;
+    }
+
+    &__valid {
+        margin-top: 0.5rem;
+        @include cardTitle;
+        min-width: 50%;
+    }
+
+    &__valid-input {
+        padding: 0.4rem;
+        max-width: 180px;
+
+        @media (max-width: 400px) {
+            font-size: 10px;;
+        }  
+    }
+
+    &__ccv {
+        margin-top: 0.5rem;
+        @include cardTitle;
+        min-width: 50%;
+    }
+
+    &__ccv-input {
+        margin-left: 0.7rem;
+        max-width: 180px;
+
+        @media (max-width: 400px) {
+            font-size: 10px;
+        }  
+
+        @media (max-width: 393px) {
+            margin-left: 1.5rem;
+        }  
+
+        @media (max-width: 389px) {
+            margin-left: 0.8rem;
+        }  
+
+
+        @media (max-width: 350px) {
+            padding: 0.3rem 1rem;
+        }
+    }
+
+    &__smallinputs {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__vendor {
+        margin-top: 0.5rem;
+        @include cardTitle;    
+    }
+
+    &__select {
+        padding: 0.6rem 3rem;
+        min-width: 280px;
+
+        @media (max-width: 400px) {
+            padding: 0.15rem 2rem;
+        }  
+    }
+
+    &__button {
+        @include buttonBase;
+        background-color: #000;
+        color: white;
+        margin-top: 5rem;
+    }
+}
