@@ -78,7 +78,7 @@ const CardForm = (props) => {
         className='card-form__select'
         onChange={(event) => { setCardVendor(event.target.value); props.setInputVendor(event.target.value); }}
         value={cardVendor}
-      >
+      >git grep"
         <option value=''></option>
         <option value="bitcoin #FFAE34 #000000">BITCOIN INC</option>
         <option value="ninja #222222 #FFFFFF">NINJA BANK</option>

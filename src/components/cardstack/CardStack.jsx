@@ -23,17 +23,17 @@ const CardStack = () => {
       <button className='card-stack__removeButton' onClick={() => cardRemover(card)}>X</button>
 
       <aside className='card__icons'>
-        <img className='card__chip' src="../../src/assets/chip-dark.svg" alt="" />
-        <img className='card__logo' src={`../../src/assets/vendor-${card.cardVendor[0]}.svg`} onClick={() => showCard(card)} alt="" />
+        <img className='card__chipcolor' src="../../src/assets/chip-dark.svg" alt="" />
+        <img className='card__logoimage' src={`../../src/assets/vendor-${card.cardVendor[0]}.svg`} onClick={() => showCard(card)} alt="" />
       </aside>
 
       <p className='card__numbers'>{card.cardNumber}</p>
 
-      <aside className='card__specs'>
+      <aside className='card__specification'>
         <span className='card__title'>Cardholder Name</span>
         <span className='card__valid'>Valid Thru</span>
       </aside>
-      <aside className='card__specs'>
+      <aside className='card__specification'>
         <span className='card__name'>{card.cardHolder}</span>
         <span className='card__date'>{card.cardValid}</span>
       </aside>
