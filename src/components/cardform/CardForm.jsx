@@ -4,54 +4,67 @@ import { useNavigate } from 'react-router-dom';
 import { addToCards } from '../../actions/walletAction';
 import './cardform.scss';
 
-const CardForm = (props) => {
+const CardForm = ({ setInputNumber, setInputHolder, setInputValid, setInputVendor }) => {
+  // Hooks to interact with Redux and react-router
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // State for storing card details input by the user
   const [cardNumber, setCardNumber] = useState('');
   const [cardHolder, setCardHolder] = useState('');
   const [cardValid, setCardValid] = useState('');
   const [cardCcv, setCardCcv] = useState('');
   const [cardVendor, setCardVendor] = useState('');
 
+  // Function to handle the click event of the Add Card button
   const handleClick = () => {
+    // Constructing the credit card object from state
     const creditCard = {
       cardNumber,
       cardHolder,
       cardValid,
       cardCcv,
-      cardVendor: cardVendor.split(' '),
+      cardVendor: cardVendor.split(' '), // Splits the vendor string into an array
       cardId: cardNumber,
     };
 
+    // Dispatching the action to add the card to the Redux store
     dispatch(addToCards(creditCard));
+    // Navigating back to the previous page
     navigate(-1);
   };
 
+  // JSX for the card form UI
   return (
     <section className='card-form'>
-      <span className='card-form__number'>Card number</span>
+      <label className='card-form__number'>Card number</label>
       <input
         className='card-form__number-input'
         maxLength='16'
         type="text"
         placeholder='1234 5678 9101 1121'
         value={cardNumber}
-        onChange={(event) => { setCardNumber(event.target.value); props.setInputNumber(event.target.value); }}
+        onChange={(event) => {
+          setCardNumber(event.target.value);
+          setInputNumber(event.target.value);
+        }}
       />
 
-      <span className='card-form__name'>Cardholder name</span>
+      <label className='card-form__name'>Cardholder name</label>
       <input
         className='card-form__name-input'
         type="text"
         placeholder='FIRSTNAME LASTNAME'
         value={cardHolder}
-        onChange={(event) => { setCardHolder(event.target.value); props.setInputHolder(event.target.value); }}
+        onChange={(event) => {
+          setCardHolder(event.target.value);
+          setInputHolder(event.target.value);
+        }}
       />
 
       <div className='card-form__smallinputs'>
-        <span className='card-form__valid'>Valid thru MM/YY</span>
-        <span className='card-form__ccv'>CCV</span>
+        <label className='card-form__valid'>Valid thru MM/YY</label>
+        <label className='card-form__ccv'>CCV</label>
       </div>
 
       <div className='card-form__smallinputs'>
@@ -61,7 +74,10 @@ const CardForm = (props) => {
           maxLength='5'
           placeholder='01 / 25'
           value={cardValid}
-          onChange={(event) => { setCardValid(event.target.value); props.setInputValid(event.target.value); }}
+          onChange={(event) => {
+            setCardValid(event.target.value);
+            setInputValid(event.target.value);
+          }}
         />
         <input
           className='card-form__ccv-input'
@@ -73,12 +89,15 @@ const CardForm = (props) => {
         />
       </div>
 
-      <span className='card-form__vendor'>Vendor</span>
+      <label className='card-form__vendor'>Vendor</label>
       <select
         className='card-form__select'
-        onChange={(event) => { setCardVendor(event.target.value); props.setInputVendor(event.target.value); }}
+        onChange={(event) => {
+          setCardVendor(event.target.value);
+          setInputVendor(event.target.value);
+        }}
         value={cardVendor}
-      >git grep"
+      >
         <option value=''></option>
         <option value="bitcoin #FFAE34 #000000">BITCOIN INC</option>
         <option value="ninja #222222 #FFFFFF">NINJA BANK</option>
